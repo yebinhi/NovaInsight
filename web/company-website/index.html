@@ -4,25 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nova Insight — Data science for online marketing</title>
-  <meta name="description" content="Nova Insight is a data science technology company for online marketing. We help brands decide what to say, who should hear it, and whether the spend is telling the truth.">
+  <meta name="description" data-i18n-meta="home.description" content="Nova Insight is a data science technology company for online marketing. We help brands decide what to say, who should hear it, and whether the spend is telling the truth.">
   <meta name="theme-color" content="#f3efe6">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/site.css">
 </head>
-<body>
-  <a class="skip" href="#content">Skip to content</a>
+<body data-i18n-title="home.title">
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
   <header class="site-header" data-header>
     <div class="frame">
       <a class="wordmark" href="index.html">Nova Insight</a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
-        <a href="#studies">Studies</a>
-        <a href="#practice">Practice</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-end">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="zh">中文</button>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="site-nav" id="site-nav" data-nav data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="#about" data-i18n="nav.about">About</a>
+          <a href="#studies" data-i18n="nav.studies">Studies</a>
+          <a href="#practice" data-i18n="nav.practice">Practice</a>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -30,20 +37,20 @@
     <section class="hero" aria-labelledby="hero-title">
       <div class="frame hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow">Data science technology</p>
+          <p class="eyebrow" data-i18n="home.eyebrow">Data science technology</p>
           <h1 id="hero-title">
-            <span>Read the</span>
-            <span>market</span>
-            <span class="em">clearly.</span>
+            <span data-i18n="home.h1.1">Read the</span>
+            <span data-i18n="home.h1.2">market</span>
+            <span class="em" data-i18n="home.h1.3">clearly.</span>
           </h1>
-          <p class="lede">Nova Insight is a data science technology company for online marketing. We help brands decide what to say, who should hear it, and whether the spend is telling the truth.</p>
+          <p class="lede" data-i18n="home.lede">Nova Insight is a data science technology company for online marketing. We help brands decide what to say, who should hear it, and whether the spend is telling the truth.</p>
           <div class="hero-actions">
-            <a class="text-link" href="#studies">See the studies</a>
-            <a class="text-link" href="#contact">Start a note</a>
+            <a class="text-link" href="#studies" data-i18n="home.studies">See the studies</a>
+            <a class="text-link" href="#contact" data-i18n="home.note">Start a note</a>
           </div>
         </div>
         <figure class="hero-plate">
-          <svg viewBox="0 0 440 560" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A circular field of marks, like a chart of scattered signal">
+          <svg viewBox="0 0 440 560" preserveAspectRatio="xMidYMid slice" role="img" data-i18n-aria="home.plate" aria-label="A circular field of marks, like a chart of scattered signal">
             <rect width="440" height="560" fill="#1e335c"/>
             <g fill="none" stroke="#f3efe6" stroke-width="1" opacity="0.85">
               <circle cx="214" cy="268" r="156"/>
@@ -68,38 +75,73 @@
             </g>
             <circle cx="286" cy="210" r="7" fill="#c4492c"/>
           </svg>
-          <figcaption>Fig. 01 — Signal field</figcaption>
+          <figcaption data-i18n="home.caption">Fig. 01 — Signal field</figcaption>
         </figure>
         <div class="hero-foot">
-          <p>For marketing teams who need the evidence to hold still.</p>
-          <p>Studies 01—04</p>
+          <p data-i18n="home.foot">For marketing teams who need the evidence to hold still.</p>
+          <p data-i18n="home.count">Studies 01—04</p>
         </div>
       </div>
     </section>
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <p>Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing · Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing ·&nbsp;</p>
-        <p>Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing · Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing ·&nbsp;</p>
+        <p data-i18n="home.marquee">Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing · Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing ·&nbsp;</p>
+        <p data-i18n="home.marquee">Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing · Brand measurement · Audience intelligence · Experiment design · Forecasting · Online marketing ·&nbsp;</p>
       </div>
     </div>
+
+    <section class="block" id="about" aria-labelledby="about-title">
+      <div class="frame">
+        <p class="section-label"><span>01</span> <span data-i18n="about.label">About us</span></p>
+        <div class="practice-grid" data-reveal>
+          <h2 id="about-title" data-i18n="about.title">A data science company, built for online marketing.</h2>
+          <div class="practice-copy">
+            <p data-i18n="about.p1">Nova Insight is a technology studio. The public work is marketing: what a brand says, who should hear it, and whether the spend can be defended.</p>
+            <p data-i18n="about.p2">Clients arrive with a live campaign and a report that will not settle the argument. We turn that argument into a measurement, a test, or a forecast the team can keep. The company stays small so the people in the readout are the people who did the work.</p>
+          </div>
+        </div>
+        <ol class="capabilities">
+          <li>
+            <span class="cap-num">01</span>
+            <h3 data-i18n="about.company">Company</h3>
+            <p data-i18n="about.company.body">Data science technology, practiced as a studio.</p>
+          </li>
+          <li>
+            <span class="cap-num">02</span>
+            <h3 data-i18n="about.field">Field</h3>
+            <p data-i18n="about.field.body">Online marketing decisions: message, audience, and spend.</p>
+          </li>
+          <li>
+            <span class="cap-num">03</span>
+            <h3 data-i18n="about.place">Place</h3>
+            <p data-i18n="about.place.body">Beside the marketing team, for the length of the question.</p>
+          </li>
+          <li>
+            <span class="cap-num">04</span>
+            <h3 data-i18n="about.standard">Standard</h3>
+            <p data-i18n="about.standard.body">A result that can change the plan, or it does not ship.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
 
     <section class="block" id="studies" aria-labelledby="studies-title">
       <div class="frame">
         <div class="section-head" data-reveal>
-          <p class="section-label"><span>01</span> Studies</p>
-          <h2 id="studies-title">Work in the shape of a decision.</h2>
-          <p class="dek">A launch, an audience, a shelf, a calendar. These studies are representative compositions, ready to be replaced by client work.</p>
+          <p class="section-label"><span>02</span> <span data-i18n="studies.label">Studies</span></p>
+          <h2 id="studies-title" data-i18n="studies.title">Work in the shape of a decision.</h2>
+          <p class="dek" data-i18n="studies.dek">A launch, an audience, a shelf, a calendar. These studies are representative compositions, ready to be replaced by client work.</p>
         </div>
         <div class="studies-list">
           <a class="study" href="studies/atelier-mare.html" style="--wash:#e6d3c6;--on:#1a1714">
             <span class="study-index">01</span>
             <span class="study-main">
               <span class="study-client">Atelier Mare</span>
-              <span class="study-title">The launch that learned in public</span>
+              <span class="study-title" data-i18n="study.atelier">The launch that learned in public</span>
             </span>
-            <span class="study-sector">Fashion</span>
-            <span class="study-go">View <i aria-hidden="true">→</i></span>
+            <span class="study-sector" data-i18n="sector.fashion">Fashion</span>
+            <span class="study-go"><span data-i18n="study.view">View</span> <i aria-hidden="true">→</i></span>
             <svg class="study-art" viewBox="0 0 168 104" aria-hidden="true">
               <circle cx="48" cy="52" r="28" fill="none" stroke="currentColor"/>
               <circle cx="78" cy="46" r="18" fill="currentColor"/>
@@ -110,10 +152,10 @@
             <span class="study-index">02</span>
             <span class="study-main">
               <span class="study-client">Northline</span>
-              <span class="study-title">Audiences you can explain</span>
+              <span class="study-title" data-i18n="study.northline">Audiences you can explain</span>
             </span>
-            <span class="study-sector">Media</span>
-            <span class="study-go">View <i aria-hidden="true">→</i></span>
+            <span class="study-sector" data-i18n="sector.media">Media</span>
+            <span class="study-go"><span data-i18n="study.view">View</span> <i aria-hidden="true">→</i></span>
             <svg class="study-art" viewBox="0 0 168 104" aria-hidden="true">
               <g fill="none" stroke="currentColor">
                 <path d="M30 70 L70 36 L112 58 L146 28"/>
@@ -128,10 +170,10 @@
             <span class="study-index">03</span>
             <span class="study-main">
               <span class="study-client">Kite &amp; Co.</span>
-              <span class="study-title">Spend that follows the shelf</span>
+              <span class="study-title" data-i18n="study.kite">Spend that follows the shelf</span>
             </span>
-            <span class="study-sector">Grocery</span>
-            <span class="study-go">View <i aria-hidden="true">→</i></span>
+            <span class="study-sector" data-i18n="sector.grocery">Grocery</span>
+            <span class="study-go"><span data-i18n="study.view">View</span> <i aria-hidden="true">→</i></span>
             <svg class="study-art" viewBox="0 0 168 104" aria-hidden="true">
               <path d="M16 88H152" fill="none" stroke="currentColor"/>
               <path fill="currentColor" d="M28 88V62h14v26zm28 0V40h14v48zm28 0V54h14v34zm28 0V28h14v60z"/>
@@ -142,10 +184,10 @@
             <span class="study-index">04</span>
             <span class="study-main">
               <span class="study-client">Fieldnote</span>
-              <span class="study-title">The week intent shows up</span>
+              <span class="study-title" data-i18n="study.fieldnote">The week intent shows up</span>
             </span>
-            <span class="study-sector">Travel</span>
-            <span class="study-go">View <i aria-hidden="true">→</i></span>
+            <span class="study-sector" data-i18n="sector.travel">Travel</span>
+            <span class="study-go"><span data-i18n="study.view">View</span> <i aria-hidden="true">→</i></span>
             <svg class="study-art" viewBox="0 0 168 104" aria-hidden="true">
               <circle cx="78" cy="52" r="30" fill="none" stroke="currentColor"/>
               <circle cx="78" cy="52" r="30" fill="none" stroke="#c4492c" stroke-width="3" stroke-dasharray="36 152" transform="rotate(-40 78 52)"/>
@@ -158,34 +200,34 @@
 
     <section class="block" id="practice" aria-labelledby="practice-title">
       <div class="frame">
-        <p class="section-label"><span>02</span> Practice</p>
+        <p class="section-label"><span>03</span> <span data-i18n="practice.label">Practice</span></p>
         <div class="practice-grid" data-reveal>
-          <h2 id="practice-title">A model earns its place when a marketer can argue with it.</h2>
+          <h2 id="practice-title" data-i18n="practice.title">A model earns its place when a marketer can argue with it.</h2>
           <div class="practice-copy">
-            <p>Nova Insight sits beside an online marketing team. The launch, the audience, the flight of spend — a decision has gone soft, and the report is too polite to say so.</p>
-            <p>The studio stays small on purpose. You work with the people who design the test, read the signal, and sit in the readout. When the engagement ends, the method stays with your team.</p>
+            <p data-i18n="practice.p1">Nova Insight sits beside an online marketing team. The launch, the audience, the flight of spend — a decision has gone soft, and the report is too polite to say so.</p>
+            <p data-i18n="practice.p2">The studio stays small on purpose. You work with the people who design the test, read the signal, and sit in the readout. When the engagement ends, the method stays with your team.</p>
           </div>
         </div>
         <ol class="capabilities">
           <li>
             <span class="cap-num">01</span>
-            <h3>Brand measurement</h3>
-            <p>What each channel contributed, in language finance and creative can both use.</p>
+            <h3 data-i18n="practice.measure">Brand measurement</h3>
+            <p data-i18n="practice.measure.body">What each channel contributed, in language finance and creative can both use.</p>
           </li>
           <li>
             <span class="cap-num">02</span>
-            <h3>Audience intelligence</h3>
-            <p>Groups with names, habits, and a reason to exist in a brief.</p>
+            <h3 data-i18n="practice.audience">Audience intelligence</h3>
+            <p data-i18n="practice.audience.body">Groups with names, habits, and a reason to exist in a brief.</p>
           </li>
           <li>
             <span class="cap-num">03</span>
-            <h3>Experiment design</h3>
-            <p>One question at a time, with a rule for when a story or a market wins.</p>
+            <h3 data-i18n="practice.experiment">Experiment design</h3>
+            <p data-i18n="practice.experiment.body">One question at a time, with a rule for when a story or a market wins.</p>
           </li>
           <li>
             <span class="cap-num">04</span>
-            <h3>Forecasting</h3>
-            <p>Where attention and demand are likely to move, so spend gets there early.</p>
+            <h3 data-i18n="practice.forecast">Forecasting</h3>
+            <p data-i18n="practice.forecast.body">Where attention and demand are likely to move, so spend gets there early.</p>
           </li>
         </ol>
       </div>
@@ -193,28 +235,28 @@
 
     <section class="block method" id="method" aria-labelledby="method-title">
       <div class="frame">
-        <p class="section-label"><span>03</span> Method</p>
-        <h2 id="method-title">How an engagement moves.</h2>
+        <p class="section-label"><span>04</span> <span data-i18n="method.label">Method</span></p>
+        <h2 id="method-title" data-i18n="method.title">How an engagement moves.</h2>
         <div class="steps">
           <article>
             <strong>01</strong>
-            <h3>Frame</h3>
-            <p>Name the decision, and the evidence that would change it.</p>
+            <h3 data-i18n="method.frame">Frame</h3>
+            <p data-i18n="method.frame.body">Name the decision, and the evidence that would change it.</p>
           </article>
           <article>
             <strong>02</strong>
-            <h3>Assemble</h3>
-            <p>Bring media, site, sales, and the shelf into one picture.</p>
+            <h3 data-i18n="method.assemble">Assemble</h3>
+            <p data-i18n="method.assemble.body">Bring media, site, sales, and the shelf into one picture.</p>
           </article>
           <article>
             <strong>03</strong>
-            <h3>Prove</h3>
-            <p>Run the test in public. Keep what clears the bar.</p>
+            <h3 data-i18n="method.prove">Prove</h3>
+            <p data-i18n="method.prove.body">Run the test in public. Keep what clears the bar.</p>
           </article>
           <article>
             <strong>04</strong>
-            <h3>Leave</h3>
-            <p>Hand over a system the team can run without us in the room.</p>
+            <h3 data-i18n="method.leave">Leave</h3>
+            <p data-i18n="method.leave.body">Hand over a system the team can run without us in the room.</p>
           </article>
         </div>
       </div>
@@ -223,31 +265,31 @@
     <section class="block contact" id="contact" aria-labelledby="contact-title">
       <div class="frame contact-grid">
         <div>
-          <p class="section-label"><span>04</span> Contact</p>
-          <h2 id="contact-title">Tell us what you need to know.</h2>
-          <p class="contact-lead">A launch, a messy audience, a budget you no longer trust. Write with as much context as you have. We read every note.</p>
+          <p class="section-label"><span>05</span> <span data-i18n="contact.label">Contact</span></p>
+          <h2 id="contact-title" data-i18n="contact.title">Tell us what you need to know.</h2>
+          <p class="contact-lead" data-i18n="contact.lead">A launch, a messy audience, a budget you no longer trust. Write with as much context as you have. The note is saved for the studio, and it is not published.</p>
           <a class="giant-mail" href="mailto:hello@novainsight.com">hello@novainsight.com</a>
         </div>
         <form class="contact-form" data-contact-form>
           <div class="form-row">
             <label class="field">
-              <span>Name</span>
+              <span data-i18n="form.name">Name</span>
               <input name="name" type="text" autocomplete="name" required>
             </label>
             <label class="field">
-              <span>Organization</span>
+              <span data-i18n="form.org">Organization</span>
               <input name="organization" type="text" autocomplete="organization">
             </label>
           </div>
           <label class="field">
-            <span>Email</span>
+            <span data-i18n="form.email">Email</span>
             <input name="email" type="email" autocomplete="email" required>
           </label>
           <label class="field">
-            <span>What should the work answer?</span>
+            <span data-i18n="form.question">What should the work answer?</span>
             <textarea name="message" required></textarea>
           </label>
-          <button class="send" type="submit">Send a note</button>
+          <button class="send" type="submit" data-i18n="form.send">Send a note</button>
           <p class="form-status" data-form-status role="status"></p>
         </form>
       </div>
@@ -258,12 +300,13 @@
     <div class="frame footer-grid">
       <div>
         <p class="footer-name">Nova Insight</p>
-        <p>A data science technology company for online marketing.</p>
+        <p data-i18n="footer.tagline">A data science technology company for online marketing.</p>
       </div>
       <div>
-        <a href="#studies">Studies</a>
-        <a href="#practice">Practice</a>
-        <a href="#contact">Contact</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#studies" data-i18n="nav.studies">Studies</a>
+        <a href="#practice" data-i18n="nav.practice">Practice</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
         <a href="mailto:hello@novainsight.com">hello@novainsight.com</a>
@@ -271,6 +314,7 @@
       </div>
     </div>
   </footer>
+  <script src="js/i18n.js"></script>
   <script src="js/site.js"></script>
 </body>
 </html>

@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}{{ t('tests.title', brand=project.brand_name) }}{% endblock %}
+{% block body %}
+  <h1>{{ t('tests.h1') }}</h1>
+  <p class="lede">{{ t('tests.lede') }}</p>
+
+  <form method="post" action="{{ url_for('create_run', project_id=project.id) }}">
+    <h2>{{ t('tests.new') }}</h2>
+    <div class="two">
+      <label><span>{{ t('field.model') }}</span><input name="model" placeholder="gpt-4.1" required></label>
+      <label><span>{{ t('field.language') }}</span><input name="language" value="{{ t('lang.zh') if project.language == 'zh' else t('lang.en') }}" required></label>
+    </div>
+    <div class="two">
+      <label><span>{{ t('field.region') }}</span><input name="region" value="{{ project.country }}" required></label>
+      <label>
+        <span>{{ t('field.channel') }}</span>
+        <select name="channel">
+          <option value="api">{{ channel_labels.api }}</option>
+          <option value="consumer">{{ channel_labels.consumer }}</option>
+        </select>
+      </label>
+    </div>
+    <label>
+      <span>{{ t('field.search') }}</span>
+      <select name="web_search">
+        <option value="no">{{ t('search.off') }}</option>
+        <option value="yes">{{ t('search.on') }}</option>
+      </select>
+    </label>
+    <button type="submit">{{ t('tests.start') }}</button>
+  </form>
+
+  {% if runs %}
+    <h2 style="margin-top:36px">{{ t('tests.existing') }}</h2>
+    {% for item in runs %}
+      <article class="run">
+        <a href="{{ url_for('tests', project_id=project.id, run=item.id) }}"><h2>{{ item.model }}</h2></a>
+        <p class="meta">{{ channel_labels[item.channel] }} · {{ item.language }} · {{ item.region }} · {{ t('field.search') }} {{ t('search.on') if item.web_search else t('search.off') }}</p>
+      </article>
+    {% endfor %}
+  {% endif %}
+
+  {% if question %}
+    <form method="post" action="{{ url_for('save_answer', project_id=project.id) }}">
+      <h2>{{ t('tests.repeat', n=repeat_index) }} · {{ question.text }}</h2>
+      <input type="hidden" name="run_id" value="{{ run.id }}">
+      <input type="hidden" name="question_id" value="{{ question.id }}">
+      <input type="hidden" name="repeat_index" value="{{ repeat_index }}">
+      <label><span>{{ t('field.body') }}</span><textarea name="body" required>{{ answer.body if answer else '' }}</textarea></label>
+      <label><span>{{ t('field.reason') }}</span><textarea name="recommendation_reason">{{ answer.recommendation_reason if answer else '' }}</textarea></label>
+      <label><span>{{ t('field.citations') }}</span><textarea name="citations">{{ citations }}</textarea></label>
+      {% for brand in brands %}
+        {% set flag = brand_flags.get((brand.name, brand.role)) %}
+        <fieldset class="checks">
+          <legend>{{ brand.name }} · {{ t('tests.client_role') if brand.role == 'client' else t('tests.competitor_role') }}</legend>
+          <label class="check"><input type="checkbox" name="mentioned:{{ brand.role }}:{{ brand.name }}" value="yes" {% if flag and flag.mentioned %}checked{% endif %}><span>{{ t('flag.mentioned') }}</span></label>
+          <label class="check"><input type="checkbox" name="recommended:{{ brand.role }}:{{ brand.name }}" value="yes" {% if flag and flag.recommended %}checked{% endif %}><span>{{ t('flag.recommended') }}</span></label>
+          <label class="check"><input type="checkbox" name="negative:{{ brand.role }}:{{ brand.name }}" value="yes" {% if flag and flag.negative %}checked{% endif %}><span>{{ t('flag.negative') }}</span></label>
+        </fieldset>
+      {% endfor %}
+      <label class="check"><input type="checkbox" name="factual_error" value="yes" {% if answer and answer.factual_error %}checked{% endif %}><span>{{ t('flag.error') }}</span></label>
+      <label><span>{{ t('field.error_note') }}</span><input name="error_note" value="{{ answer.error_note if answer else '' }}"></label>
+      <p class="meta">{{ t('tests.repeat_note', n=repeat_index) }}</p>
+      <button type="submit">{{ t('tests.save') }}</button>
+    </form>
+  {% endif %}
+
+  {% if run %}
+    <h2 style="margin-top:36px">{{ run.model }} · {{ channel_labels[run.channel] }} · {{ t('tests.progress') }}</h2>
+    {% for item in progress %}
+      <article class="question">
+        <p>
+          <span class="tag">{{ "%02d"|format(item.position) }}</span>
+          <span class="tag">{{ t('tag.branded') if item.branded else t('tag.unbranded') }}</span>
+          <span class="tag">{{ item.saved }}/3</span>
+        </p>
+        <h2><a href="{{ url_for('tests', project_id=project.id, run=run.id, question=item.id, repeat=1) }}">{{ item.text }}</a></h2>
+      </article>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

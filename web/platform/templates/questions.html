@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block title %}{{ t('questions.title', brand=project.brand_name) }}{% endblock %}
+{% block body %}
+  <h1>{{ t('questions.h1') }}</h1>
+  <p class="lede">{{ t('questions.lede') }}</p>
+  <form method="post" action="{{ url_for('create_questions', project_id=project.id) }}">
+    <button type="submit">{{ t('questions.regenerate') if questions else t('questions.generate') }}</button>
+  </form>
+  {% for item in questions %}
+    <article class="question">
+      <p>
+        <span class="tag">{{ "%02d"|format(item.position) }} {{ stage_labels[item.stage] }}</span>
+        <span class="tag">{{ t('tag.branded') if item.branded else t('tag.unbranded') }}</span>
+      </p>
+      <h2>{{ item.text }}</h2>
+    </article>
+  {% endfor %}
+{% endblock %}

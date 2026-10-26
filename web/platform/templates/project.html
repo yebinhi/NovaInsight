@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}{% if mode == 'detail' %}{{ project.brand_name }} — Nova Insight{% else %}{{ t('home.title') }}{% endif %}{% endblock %}
+{% block body %}
+  {% if mode == 'list' %}
+    <h1>{{ t('home.h1') }}</h1>
+    <p class="lede">{{ t('home.lede') }}</p>
+    {% if projects %}
+      <div>
+        {% for item in projects %}
+          <article class="project-list">
+            <a href="{{ url_for('project_detail', project_id=item.id) }}"><h2>{{ item.brand_name }}</h2></a>
+            <p class="meta">{{ t('home.counts', country=item.country, products=item.products, questions=item.question_count, answers=item.answer_count) }}</p>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <form method="post" action="{{ url_for('create_project') }}">
+      <h2>{{ t('home.new') }}</h2>
+      <p class="meta">{{ t('home.hint') }}</p>
+      <label><span>{{ t('field.brand') }}</span><input name="brand_name" required></label>
+      <label><span>{{ t('field.website') }}</span><input name="website" placeholder="https://" required></label>
+      <label><span>{{ t('field.products') }}</span><input name="products" placeholder="{{ t('home.ph.products') }}" required></label>
+      <div class="two">
+        <label><span>{{ t('field.country') }}</span><input name="country" placeholder="{{ t('home.ph.country') }}" required></label>
+        <label><span>{{ t('field.audience') }}</span><input name="audience" placeholder="{{ t('home.ph.audience') }}" required></label>
+      </div>
+      <label>
+        <span>{{ t('field.competitors') }}</span>
+        <textarea name="competitors" placeholder="{{ t('home.ph.competitors') }}"></textarea>
+      </label>
+      <label>
+        <span>{{ t('field.hoped') }}</span>
+        <textarea name="hoped_questions" placeholder="{{ t('home.ph.hoped') }}"></textarea>
+      </label>
+      <button type="submit">{{ t('home.submit') }}</button>
+    </form>
+  {% else %}
+    <p class="eyebrow">{{ project.country }}</p>
+    <h1>{{ project.brand_name }}</h1>
+    <p class="lede">{{ t('detail.lede', products=project.products, audience=project.audience, website=project.website) }}</p>
+    <p class="meta">{{ t('detail.counts', questions=counts.questions, runs=counts.runs, answers=counts.answers) }}</p>
+    {% if competitors %}
+      <p class="meta">{{ t('detail.competitors') }}{{ competitors | map(attribute='name') | join('、' if lang == 'zh' else ', ') }}</p>
+    {% endif %}
+    {% if counts.answers %}
+      <p class="lede">{{ t('detail.next_report') }}</p>
+      <p><a class="button" href="{{ url_for('report', project_id=project.id) }}">{{ t('detail.enter_report') }}</a></p>
+    {% elif counts.questions %}
+      <p class="lede">{{ t('detail.next_answers') }}</p>
+      <p><a class="button" href="{{ url_for('tests', project_id=project.id) }}">{{ t('detail.enter_answers') }}</a></p>
+    {% else %}
+      <p class="lede">{{ t('detail.next') }}</p>
+      <p><a class="button" href="{{ url_for('question_list', project_id=project.id) }}">{{ t('detail.enter') }}</a></p>
+    {% endif %}
+  {% endif %}
+{% endblock %}

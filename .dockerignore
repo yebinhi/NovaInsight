@@ -1,0 +1,4 @@
+.git
+**/__pycache__
+**/*.sqlite
+web/company-website

@@ -4,25 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Atelier Mare — Nova Insight</title>
-  <meta name="description" content="A representative Nova Insight study: a fashion launch that learned which stories to keep, in public.">
+  <meta name="description" data-i18n-meta="atelier.description" content="A representative Nova Insight study: a fashion launch that learned which stories to keep, in public.">
   <meta name="theme-color" content="#f3efe6">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/site.css">
 </head>
-<body>
-  <a class="skip" href="#content">Skip to content</a>
+<body data-i18n-title="atelier.title">
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
   <header class="site-header" data-header>
     <div class="frame">
       <a class="wordmark" href="../index.html">Nova Insight</a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
-        <a href="../index.html#studies" aria-current="page">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
+      <div class="header-end">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="zh">中文</button>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="site-nav" id="site-nav" data-nav data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="../index.html#about" data-i18n="nav.about">About</a>
+          <a href="../index.html#studies" aria-current="page" data-i18n="nav.studies">Studies</a>
+          <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+          <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="content">
@@ -31,16 +38,16 @@
         <p class="watermark" aria-hidden="true">01</p>
         <div class="frame">
           <div class="study-top">
-            <a class="back" href="../index.html#studies">All studies</a>
-            <p>Fashion · Experiment design</p>
+            <a class="back" href="../index.html#studies" data-i18n="study.all">All studies</a>
+            <p data-i18n="atelier.meta">Fashion · Experiment design</p>
           </div>
           <div class="study-bottom">
             <p class="kicker">01 — Atelier Mare</p>
-            <h1>The launch that learned in public.</h1>
+            <h1 data-i18n="atelier.h1">The launch that learned in public.</h1>
             <ul class="figures">
-              <li><strong>+38%</strong><span>Return on ad spend versus the prior launch</span></li>
-              <li><strong>11</strong><span>Weeks from first test to the kept plan</span></li>
-              <li><strong>2</strong><span>Stories carried forward, from eight</span></li>
+              <li><strong>+38%</strong><span data-i18n="atelier.fig1">Return on ad spend versus the prior launch</span></li>
+              <li><strong>11</strong><span data-i18n="atelier.fig2">Weeks from first test to the kept plan</span></li>
+              <li><strong>2</strong><span data-i18n="atelier.fig3">Stories carried forward, from eight</span></li>
             </ul>
           </div>
         </div>
@@ -48,23 +55,23 @@
       <div class="frame essay">
         <div class="essay-grid">
           <dl class="facts">
-            <dt>Client</dt>
+            <dt data-i18n="fact.client">Client</dt>
             <dd>Atelier Mare</dd>
-            <dt>Sector</dt>
-            <dd>Fashion</dd>
-            <dt>Span</dt>
-            <dd>11 weeks</dd>
-            <dt>Discipline</dt>
-            <dd>Experiment design</dd>
+            <dt data-i18n="fact.sector">Sector</dt>
+            <dd data-i18n="sector.fashion">Fashion</dd>
+            <dt data-i18n="fact.span">Span</dt>
+            <dd data-i18n="atelier.span">11 weeks</dd>
+            <dt data-i18n="fact.discipline">Discipline</dt>
+            <dd data-i18n="disc.experiment">Experiment design</dd>
           </dl>
           <div class="prose">
-            <p class="note">A representative study, composed to show the shape of an engagement.</p>
-            <h2>The situation</h2>
-            <p>Atelier Mare was eight weeks from a seasonal launch and spending as if every film, still, and city deserved the same chance. The team could feel a favorite. The media report treated all eight stories as equals. They asked for a way to let the launch teach them without burning the season.</p>
-            <h2>The work</h2>
-            <p>We separated the question into a sequence. First, which story. Then, which audience. Then, which city. Each stage ran only long enough to beat a threshold the team had agreed in advance, and anything that missed it left the plan the same week.</p>
-            <p class="pull">Stop averaging the creatives. Let one of them win.</p>
-            <p>The marketing team kept a single test log: hypothesis, spend, result, decision. A model stayed in the room only when it could change Monday’s buy.</p>
+            <p class="note" data-i18n="study.note">A representative study, composed to show the shape of an engagement.</p>
+            <h2 data-i18n="study.situation">The situation</h2>
+            <p data-i18n="atelier.s1">Atelier Mare was eight weeks from a seasonal launch and spending as if every film, still, and city deserved the same chance. The team could feel a favorite. The media report treated all eight stories as equals. They asked for a way to let the launch teach them without burning the season.</p>
+            <h2 data-i18n="study.work">The work</h2>
+            <p data-i18n="atelier.s2">We separated the question into a sequence. First, which story. Then, which audience. Then, which city. Each stage ran only long enough to beat a threshold the team had agreed in advance, and anything that missed it left the plan the same week.</p>
+            <p class="pull" data-i18n="atelier.pull">Stop averaging the creatives. Let one of them win.</p>
+            <p data-i18n="atelier.s3">The marketing team kept a single test log: hypothesis, spend, result, decision. A model stayed in the room only when it could change Monday’s buy.</p>
           </div>
         </div>
       </div>
@@ -84,13 +91,13 @@
         <div class="essay-grid">
           <div class="spacer"></div>
           <div class="prose">
-            <h2>What remained</h2>
-            <p>Two stories carried the launch. Return on ad spend finished 38% above the prior season, on a media budget that did not grow. The test log stayed with the in-house team, ready for the next drop.</p>
-            <h2>What the team kept</h2>
+            <h2 data-i18n="study.remained">What remained</h2>
+            <p data-i18n="atelier.remain">Two stories carried the launch. Return on ad spend finished 38% above the prior season, on a media budget that did not grow. The test log stayed with the in-house team, ready for the next drop.</p>
+            <h2 data-i18n="study.kept">What the team kept</h2>
             <ul class="made">
-              <li>A sequence that tests story, then audience, then city</li>
-              <li>A rule for when a creative leaves the plan</li>
-              <li>A one-page log the brand team still runs</li>
+              <li data-i18n="atelier.k1">A sequence that tests story, then audience, then city</li>
+              <li data-i18n="atelier.k2">A rule for when a creative leaves the plan</li>
+              <li data-i18n="atelier.k3">A one-page log the brand team still runs</li>
             </ul>
           </div>
         </div>
@@ -98,9 +105,9 @@
     </article>
     <a class="onward" href="northline.html" style="--wash:#1b2822;--on:#f4efe6">
       <div class="frame">
-        <span>Next study</span>
+        <span data-i18n="study.next">Next study</span>
         <strong>Northline</strong>
-        <em>Audiences you can explain.</em>
+        <em data-i18n="atelier.next">Audiences you can explain.</em>
       </div>
     </a>
   </main>
@@ -108,12 +115,13 @@
     <div class="frame footer-grid">
       <div>
         <p class="footer-name">Nova Insight</p>
-        <p>A data science technology company for online marketing.</p>
+        <p data-i18n="footer.tagline">A data science technology company for online marketing.</p>
       </div>
       <div>
-        <a href="../index.html#studies">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+        <a href="../index.html#studies" data-i18n="nav.studies">Studies</a>
+        <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
         <a href="mailto:hello@novainsight.com">hello@novainsight.com</a>
@@ -121,6 +129,7 @@
       </div>
     </div>
   </footer>
+  <script src="../js/i18n.js"></script>
   <script src="../js/site.js"></script>
 </body>
 </html>

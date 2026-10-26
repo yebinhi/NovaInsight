@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ 'zh-Hans' if lang == 'zh' else 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Nova Insight{% endblock %}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500&family=Outfit:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='platform.css') }}">
+</head>
+<body>
+  <header class="site-header">
+    <a class="wordmark" href="{{ url_for('home') }}">Nova Insight</a>
+    <div class="header-tools">
+      <p class="eyebrow">{{ t('brand.platform') }}</p>
+      <nav class="lang-switch" aria-label="{{ t('lang.label') }}">
+        <a href="{{ url_for('set_language', lang='en') }}" {% if lang == 'en' %}aria-current="true"{% endif %}>EN</a>
+        <a href="{{ url_for('set_language', lang='zh') }}" {% if lang == 'zh' %}aria-current="true"{% endif %}>中文</a>
+      </nav>
+    </div>
+  </header>
+  <main class="frame">
+    {% with messages = get_flashed_messages() %}
+      {% for message in messages %}
+        <p class="flash">{{ message }}</p>
+      {% endfor %}
+    {% endwith %}
+    {% if project %}
+      <nav class="steps" aria-label="{{ t('steps.aria') }}">
+        <a href="{{ url_for('project_detail', project_id=project.id) }}" {% if request.endpoint == 'project_detail' %}aria-current="page"{% endif %}>{{ t('steps.client') }}</a>
+        <a href="{{ url_for('question_list', project_id=project.id) }}" {% if request.endpoint == 'question_list' %}aria-current="page"{% endif %}>{{ t('steps.questions') }}</a>
+        <a href="{{ url_for('tests', project_id=project.id) }}" {% if request.endpoint == 'tests' %}aria-current="page"{% endif %}>{{ t('steps.tests') }}</a>
+        <a href="{{ url_for('metrics', project_id=project.id) }}" {% if request.endpoint == 'metrics' %}aria-current="page"{% endif %}>{{ t('steps.metrics') }}</a>
+        <a href="{{ url_for('evidence', project_id=project.id) }}" {% if request.endpoint == 'evidence' %}aria-current="page"{% endif %}>{{ t('steps.evidence') }}</a>
+        <a href="{{ url_for('report', project_id=project.id) }}" {% if request.endpoint == 'report' %}aria-current="page"{% endif %}>{{ t('steps.report') }}</a>
+      </nav>
+    {% endif %}
+    {% block body %}{% endblock %}
+  </main>
+</body>
+</html>

@@ -4,25 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fieldnote — Nova Insight</title>
-  <meta name="description" content="A representative Nova Insight study: a travel company moved budget into the weeks when intent was real.">
+  <meta name="description" data-i18n-meta="fieldnote.description" content="A representative Nova Insight study: a travel company moved budget into the weeks when intent was real.">
   <meta name="theme-color" content="#f3efe6">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/site.css">
 </head>
-<body>
-  <a class="skip" href="#content">Skip to content</a>
+<body data-i18n-title="fieldnote.title">
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
   <header class="site-header" data-header>
     <div class="frame">
       <a class="wordmark" href="../index.html">Nova Insight</a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
-        <a href="../index.html#studies" aria-current="page">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
+      <div class="header-end">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="zh">中文</button>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="site-nav" id="site-nav" data-nav data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="../index.html#about" data-i18n="nav.about">About</a>
+          <a href="../index.html#studies" aria-current="page" data-i18n="nav.studies">Studies</a>
+          <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+          <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="content">
@@ -31,16 +38,16 @@
         <p class="watermark" aria-hidden="true">04</p>
         <div class="frame">
           <div class="study-top">
-            <a class="back" href="../index.html#studies">All studies</a>
-            <p>Travel · Brand measurement</p>
+            <a class="back" href="../index.html#studies" data-i18n="study.all">All studies</a>
+            <p data-i18n="fieldnote.meta">Travel · Brand measurement</p>
           </div>
           <div class="study-bottom">
             <p class="kicker">04 — Fieldnote</p>
-            <h1>The week intent shows up.</h1>
+            <h1 data-i18n="fieldnote.h1">The week intent shows up.</h1>
             <ul class="figures">
-              <li><strong>+19%</strong><span>Visits that became a booking</span></li>
-              <li><strong>Same</strong><span>Media budget, gathered into live weeks</span></li>
-              <li><strong>Days</strong><span>The unit of the plan, not the month</span></li>
+              <li><strong>+19%</strong><span data-i18n="fieldnote.fig1">Visits that became a booking</span></li>
+              <li><strong data-i18n="fieldnote.same">Same</strong><span data-i18n="fieldnote.fig2">Media budget, gathered into live weeks</span></li>
+              <li><strong data-i18n="fieldnote.days">Days</strong><span data-i18n="fieldnote.fig3">The unit of the plan, not the month</span></li>
             </ul>
           </div>
         </div>
@@ -48,23 +55,23 @@
       <div class="frame essay">
         <div class="essay-grid">
           <dl class="facts">
-            <dt>Client</dt>
+            <dt data-i18n="fact.client">Client</dt>
             <dd>Fieldnote</dd>
-            <dt>Sector</dt>
-            <dd>Travel</dd>
-            <dt>Span</dt>
-            <dd>14 weeks</dd>
-            <dt>Discipline</dt>
-            <dd>Brand measurement</dd>
+            <dt data-i18n="fact.sector">Sector</dt>
+            <dd data-i18n="sector.travel">Travel</dd>
+            <dt data-i18n="fact.span">Span</dt>
+            <dd data-i18n="fieldnote.span">14 weeks</dd>
+            <dt data-i18n="fact.discipline">Discipline</dt>
+            <dd data-i18n="disc.measure">Brand measurement</dd>
           </dl>
           <div class="prose">
-            <p class="note">A representative study, composed to show the shape of an engagement.</p>
-            <h2>The situation</h2>
-            <p>Fieldnote bought travel intent by the month. Bookings told a sharper story: a few days after particular essays, then quiet. The rest of the flight was polite and expensive. The report, averaged across thirty days, called the month a success.</p>
-            <h2>The work</h2>
-            <p>We lined up search, email response, and on-site paths, and marked the weeks when intent was real for each route. Budget moved into those windows. Routes with no window were paused instead of being tuned into a smaller loss.</p>
-            <p class="pull">The month is a reporting habit. The week is when someone decides.</p>
-            <p>Creative stayed in the plan only when it showed up again in the booking week. A beautiful essay that never met a decision left the flight.</p>
+            <p class="note" data-i18n="study.note">A representative study, composed to show the shape of an engagement.</p>
+            <h2 data-i18n="study.situation">The situation</h2>
+            <p data-i18n="fieldnote.s1">Fieldnote bought travel intent by the month. Bookings told a sharper story: a few days after particular essays, then quiet. The rest of the flight was polite and expensive. The report, averaged across thirty days, called the month a success.</p>
+            <h2 data-i18n="study.work">The work</h2>
+            <p data-i18n="fieldnote.s2">We lined up search, email response, and on-site paths, and marked the weeks when intent was real for each route. Budget moved into those windows. Routes with no window were paused instead of being tuned into a smaller loss.</p>
+            <p class="pull" data-i18n="fieldnote.pull">The month is a reporting habit. The week is when someone decides.</p>
+            <p data-i18n="fieldnote.s3">Creative stayed in the plan only when it showed up again in the booking week. A beautiful essay that never met a decision left the flight.</p>
           </div>
         </div>
       </div>
@@ -84,13 +91,13 @@
         <div class="essay-grid">
           <div class="spacer"></div>
           <div class="prose">
-            <h2>What remained</h2>
-            <p>Visits converted to bookings 19% more often, on the same media budget. The calendar did the work. The team stopped buying a month and started buying the week a route was actually alive.</p>
-            <h2>What the team kept</h2>
+            <h2 data-i18n="study.remained">What remained</h2>
+            <p data-i18n="fieldnote.remain">Visits converted to bookings 19% more often, on the same media budget. The calendar did the work. The team stopped buying a month and started buying the week a route was actually alive.</p>
+            <h2 data-i18n="study.kept">What the team kept</h2>
             <ul class="made">
-              <li>An intent window for each route</li>
-              <li>A pause rule for flights with no decision week</li>
-              <li>A readout that refuses to average the quiet days in</li>
+              <li data-i18n="fieldnote.k1">An intent window for each route</li>
+              <li data-i18n="fieldnote.k2">A pause rule for flights with no decision week</li>
+              <li data-i18n="fieldnote.k3">A readout that refuses to average the quiet days in</li>
             </ul>
           </div>
         </div>
@@ -98,9 +105,9 @@
     </article>
     <a class="onward" href="atelier-mare.html" style="--wash:#e6d3c6;--on:#1a1714">
       <div class="frame">
-        <span>Next study</span>
+        <span data-i18n="study.next">Next study</span>
         <strong>Atelier Mare</strong>
-        <em>The launch that learned in public.</em>
+        <em data-i18n="fieldnote.next">The launch that learned in public.</em>
       </div>
     </a>
   </main>
@@ -108,12 +115,13 @@
     <div class="frame footer-grid">
       <div>
         <p class="footer-name">Nova Insight</p>
-        <p>A data science technology company for online marketing.</p>
+        <p data-i18n="footer.tagline">A data science technology company for online marketing.</p>
       </div>
       <div>
-        <a href="../index.html#studies">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+        <a href="../index.html#studies" data-i18n="nav.studies">Studies</a>
+        <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
         <a href="mailto:hello@novainsight.com">hello@novainsight.com</a>
@@ -121,6 +129,7 @@
       </div>
     </div>
   </footer>
+  <script src="../js/i18n.js"></script>
   <script src="../js/site.js"></script>
 </body>
 </html>

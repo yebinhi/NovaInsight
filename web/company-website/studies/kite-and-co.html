@@ -4,25 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kite &amp; Co. — Nova Insight</title>
-  <meta name="description" content="A representative Nova Insight study: a grocery brand moved media spend toward the regions where the shelf was ready.">
+  <meta name="description" data-i18n-meta="kite.description" content="A representative Nova Insight study: a grocery brand moved media spend toward the regions where the shelf was ready.">
   <meta name="theme-color" content="#f3efe6">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/site.css">
 </head>
-<body>
-  <a class="skip" href="#content">Skip to content</a>
+<body data-i18n-title="kite.title">
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
   <header class="site-header" data-header>
     <div class="frame">
       <a class="wordmark" href="../index.html">Nova Insight</a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
-        <a href="../index.html#studies" aria-current="page">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
+      <div class="header-end">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="zh">中文</button>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="site-nav" id="site-nav" data-nav data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="../index.html#about" data-i18n="nav.about">About</a>
+          <a href="../index.html#studies" aria-current="page" data-i18n="nav.studies">Studies</a>
+          <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+          <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="content">
@@ -31,16 +38,16 @@
         <p class="watermark" aria-hidden="true">03</p>
         <div class="frame">
           <div class="study-top">
-            <a class="back" href="../index.html#studies">All studies</a>
-            <p>Grocery · Forecasting</p>
+            <a class="back" href="../index.html#studies" data-i18n="study.all">All studies</a>
+            <p data-i18n="kite.meta">Grocery · Forecasting</p>
           </div>
           <div class="study-bottom">
             <p class="kicker">03 — Kite &amp; Co.</p>
-            <h1>Spend that follows the shelf.</h1>
+            <h1 data-i18n="kite.h1">Spend that follows the shelf.</h1>
             <ul class="figures">
-              <li><strong>−22%</strong><span>Unsold promoted stock over the quarter</span></li>
-              <li><strong>Weekly</strong><span>A demand read, in place of last year’s calendar</span></li>
-              <li><strong>Same</strong><span>Media budget, pointed at ready regions</span></li>
+              <li><strong>−22%</strong><span data-i18n="kite.fig1">Unsold promoted stock over the quarter</span></li>
+              <li><strong data-i18n="kite.weekly">Weekly</strong><span data-i18n="kite.fig2">A demand read, in place of last year’s calendar</span></li>
+              <li><strong data-i18n="kite.same">Same</strong><span data-i18n="kite.fig3">Media budget, pointed at ready regions</span></li>
             </ul>
           </div>
         </div>
@@ -48,23 +55,23 @@
       <div class="frame essay">
         <div class="essay-grid">
           <dl class="facts">
-            <dt>Client</dt>
+            <dt data-i18n="fact.client">Client</dt>
             <dd>Kite &amp; Co.</dd>
-            <dt>Sector</dt>
-            <dd>Grocery</dd>
-            <dt>Span</dt>
-            <dd>One quarter</dd>
-            <dt>Discipline</dt>
-            <dd>Forecasting</dd>
+            <dt data-i18n="fact.sector">Sector</dt>
+            <dd data-i18n="sector.grocery">Grocery</dd>
+            <dt data-i18n="fact.span">Span</dt>
+            <dd data-i18n="kite.span">One quarter</dd>
+            <dt data-i18n="fact.discipline">Discipline</dt>
+            <dd data-i18n="disc.forecast">Forecasting</dd>
           </dl>
           <div class="prose">
-            <p class="note">A representative study, composed to show the shape of an engagement.</p>
-            <h2>The situation</h2>
-            <p>Promotions were planned from last year’s calendar. Digital spend followed the promotion, including regions where the shelf was already heavy and the week was warm enough to slow that category. The ads arrived. The product sometimes did not need them.</p>
-            <h2>The work</h2>
-            <p>We joined store velocity, local weather, and media delivery into a weekly sense of where demand was about to move. Budget shifted toward regions where the product was ready and attention was cheap enough to matter. Where the shelf could not support a spike, the ads waited.</p>
-            <p class="pull">Spend is a supply decision in a media costume.</p>
-            <p>The marketing lead and the supply lead started reading the same Monday note. One page, two decisions: where to push, and where to hold.</p>
+            <p class="note" data-i18n="study.note">A representative study, composed to show the shape of an engagement.</p>
+            <h2 data-i18n="study.situation">The situation</h2>
+            <p data-i18n="kite.s1">Promotions were planned from last year’s calendar. Digital spend followed the promotion, including regions where the shelf was already heavy and the week was warm enough to slow that category. The ads arrived. The product sometimes did not need them.</p>
+            <h2 data-i18n="study.work">The work</h2>
+            <p data-i18n="kite.s2">We joined store velocity, local weather, and media delivery into a weekly sense of where demand was about to move. Budget shifted toward regions where the product was ready and attention was cheap enough to matter. Where the shelf could not support a spike, the ads waited.</p>
+            <p class="pull" data-i18n="kite.pull">Spend is a supply decision in a media costume.</p>
+            <p data-i18n="kite.s3">The marketing lead and the supply lead started reading the same Monday note. One page, two decisions: where to push, and where to hold.</p>
           </div>
         </div>
       </div>
@@ -92,13 +99,13 @@
         <div class="essay-grid">
           <div class="spacer"></div>
           <div class="prose">
-            <h2>What remained</h2>
-            <p>Unsold promoted stock dropped 22% over the quarter. The media plan started to read like a supply plan: a region earned spend when the shelf could answer it.</p>
-            <h2>What the team kept</h2>
+            <h2 data-i18n="study.remained">What remained</h2>
+            <p data-i18n="kite.remain">Unsold promoted stock dropped 22% over the quarter. The media plan started to read like a supply plan: a region earned spend when the shelf could answer it.</p>
+            <h2 data-i18n="study.kept">What the team kept</h2>
             <ul class="made">
-              <li>A weekly picture of velocity, weather, and delivery</li>
-              <li>A hold rule for regions that cannot take a spike</li>
-              <li>A Monday note shared by marketing and supply</li>
+              <li data-i18n="kite.k1">A weekly picture of velocity, weather, and delivery</li>
+              <li data-i18n="kite.k2">A hold rule for regions that cannot take a spike</li>
+              <li data-i18n="kite.k3">A Monday note shared by marketing and supply</li>
             </ul>
           </div>
         </div>
@@ -106,9 +113,9 @@
     </article>
     <a class="onward" href="fieldnote.html" style="--wash:#1e335c;--on:#f4efe6">
       <div class="frame">
-        <span>Next study</span>
+        <span data-i18n="study.next">Next study</span>
         <strong>Fieldnote</strong>
-        <em>The week intent shows up.</em>
+        <em data-i18n="kite.next">The week intent shows up.</em>
       </div>
     </a>
   </main>
@@ -116,12 +123,13 @@
     <div class="frame footer-grid">
       <div>
         <p class="footer-name">Nova Insight</p>
-        <p>A data science technology company for online marketing.</p>
+        <p data-i18n="footer.tagline">A data science technology company for online marketing.</p>
       </div>
       <div>
-        <a href="../index.html#studies">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+        <a href="../index.html#studies" data-i18n="nav.studies">Studies</a>
+        <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
         <a href="mailto:hello@novainsight.com">hello@novainsight.com</a>
@@ -129,6 +137,7 @@
       </div>
     </div>
   </footer>
+  <script src="../js/i18n.js"></script>
   <script src="../js/site.js"></script>
 </body>
 </html>

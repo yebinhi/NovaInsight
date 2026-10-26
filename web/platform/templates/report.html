@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}{{ t('report.title', brand=project.brand_name) }}{% endblock %}
+{% block body %}
+  <h1>{{ t('report.h1') }}</h1>
+  <p class="lede">{{ t('report.lede', brand=project.brand_name, products=project.products, country=project.country) }}</p>
+  <form method="post" action="{{ url_for('create_report', project_id=project.id) }}">
+    <button type="submit">{{ t('report.generate') }}</button>
+  </form>
+
+  {% for channel, metrics in by_channel.items() %}
+    {% if metrics.total %}
+      <h2 style="margin-top:32px">{{ channel_labels[channel] }}</h2>
+      <p class="meta">{{ t('report.summary', natural_num=metrics.natural.num, natural_den=metrics.natural.den, recommended_num=metrics.recommended.num, recommended_den=metrics.recommended.den, cited_num=metrics.cited.num, cited_den=metrics.cited.den, error_num=metrics.errors.num, error_den=metrics.errors.den, negative_num=metrics.negative.num) }}</p>
+    {% endif %}
+  {% endfor %}
+
+  {% if not has_answers %}
+    <p class="lede">{{ t('report.empty') }}</p>
+  {% elif not findings %}
+    <p class="lede">{{ t('report.none') }}</p>
+  {% endif %}
+
+  {% for finding in findings %}
+    <article class="finding">
+      <p><span class="tag">{{ t('claim.fact') if finding.basis == 'fact' else t('claim.hypothesis') }}</span></p>
+      <h2>{{ finding.observation }}</h2>
+      <p class="lede">{{ finding.action }}</p>
+      {% for link in finding.links %}
+        <p class="meta">{{ t('report.answer', id=link.answer_id) }} · {{ link.text }}</p>
+      {% endfor %}
+    </article>
+  {% endfor %}
+
+  {% if notes %}
+    <h2 style="margin-top:36px">{{ t('report.notes') }}</h2>
+    {% for note in notes %}
+      <article class="note">
+        <p>
+          <span class="tag">{{ t('source.site') if note.kind == 'site' else t('source.external') }}</span>
+          <span class="tag">{{ t('claim.fact') if note.claim_type == 'fact' else t('claim.hypothesis') }}</span>
+        </p>
+        <h2>{{ note.observation }}</h2>
+        {% if note.detail %}<p class="meta">{{ note.detail }}</p>{% endif %}
+      </article>
+    {% endfor %}
+  {% endif %}
+{% endblock %}

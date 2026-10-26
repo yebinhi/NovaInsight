@@ -16,7 +16,7 @@ const closeNav = () => {
   if (!nav || !toggle) return;
   nav.classList.remove("is-open");
   toggle.setAttribute("aria-expanded", "false");
-  toggle.textContent = "Menu";
+  toggle.textContent = window.novaText("nav.menu");
   document.body.classList.remove("nav-open");
 };
 
@@ -25,7 +25,7 @@ if (toggle && nav) {
     const open = !nav.classList.contains("is-open");
     nav.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", String(open));
-    toggle.textContent = open ? "Close" : "Menu";
+    toggle.textContent = window.novaText(open ? "nav.close" : "nav.menu");
     document.body.classList.toggle("nav-open", open);
     if (open) {
       const first = nav.querySelector("a");
@@ -44,27 +44,57 @@ if (toggle && nav) {
 
 const form = document.querySelector("[data-contact-form]");
 if (form) {
-  form.addEventListener("submit", (event) => {
+  form.addEventListener("submit", async (event) => {
     event.preventDefault();
-    const name = form.elements.name.value.trim();
-    const organization = form.elements.organization.value.trim();
-    const email = form.elements.email.value.trim();
-    const message = form.elements.message.value.trim();
-    const body = [
-      `Name: ${name}`,
-      organization ? `Organization: ${organization}` : null,
-      `Email: ${email}`,
-      "",
-      message,
-    ]
-      .filter((line) => line !== null)
-      .join("\n");
-    const href = `mailto:hello@novainsight.com?subject=${encodeURIComponent("A note for Nova Insight")}&body=${encodeURIComponent(body)}`;
     const status = form.querySelector("[data-form-status]");
-    if (status) {
-      status.textContent = "Opening your email app with this note. If nothing opens, write to hello@novainsight.com.";
+    const button = form.querySelector("[type=submit]");
+    const payload = {
+      name: form.elements.name.value.trim(),
+      organization: form.elements.organization.value.trim(),
+      email: form.elements.email.value.trim(),
+      message: form.elements.message.value.trim(),
+    };
+    button.disabled = true;
+    if (status) status.textContent = "";
+    try {
+      const response = await fetch("/api/messages", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok) {
+        const known = {
+          "Send the note as JSON.": "form.json",
+          "That note is too long.": "form.long",
+          "Name, email, and a note are required.": "form.required",
+          "Enter an email address.": "form.emailInvalid",
+          "The note could not be saved.": "form.failed",
+        };
+        const error = new Error(data.error || "The note could not be saved.");
+        error.i18nKey = known[data.error] || known[error.message] || "";
+        throw error;
+      }
+      form.reset();
+      if (status) {
+        status.dataset.i18n = "form.saved";
+        status.textContent = window.novaText("form.saved");
+      }
+    } catch (error) {
+      if (status) {
+        const offline = error.message === "Failed to fetch";
+        const key = offline ? "form.offline" : error.i18nKey;
+        if (key) {
+          status.dataset.i18n = key;
+          status.textContent = window.novaText(key);
+        } else {
+          delete status.dataset.i18n;
+          status.textContent = error.message;
+        }
+      }
+    } finally {
+      button.disabled = false;
     }
-    window.location.href = href;
   });
 }
 

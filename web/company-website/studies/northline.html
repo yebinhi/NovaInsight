@@ -4,25 +4,32 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Northline — Nova Insight</title>
-  <meta name="description" content="A representative Nova Insight study: a publisher replaced opaque lookalikes with audiences a sales team could explain.">
+  <meta name="description" data-i18n-meta="northline.description" content="A representative Nova Insight study: a publisher replaced opaque lookalikes with audiences a sales team could explain.">
   <meta name="theme-color" content="#f3efe6">
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Noto+Sans+SC:wght@400;500&family=Noto+Serif+SC:wght@500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/site.css">
 </head>
-<body>
-  <a class="skip" href="#content">Skip to content</a>
+<body data-i18n-title="northline.title">
+  <a class="skip" href="#content" data-i18n="skip">Skip to content</a>
   <header class="site-header" data-header>
     <div class="frame">
       <a class="wordmark" href="../index.html">Nova Insight</a>
-      <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">
-        <a href="../index.html#studies" aria-current="page">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
-      </nav>
+      <div class="header-end">
+        <div class="lang-switch" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" data-set-lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-set-lang="zh">中文</button>
+        </div>
+        <button class="nav-toggle" type="button" data-nav-toggle aria-expanded="false" aria-controls="site-nav">Menu</button>
+        <nav class="site-nav" id="site-nav" data-nav data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="../index.html#about" data-i18n="nav.about">About</a>
+          <a href="../index.html#studies" aria-current="page" data-i18n="nav.studies">Studies</a>
+          <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+          <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
   <main id="content">
@@ -31,16 +38,16 @@
         <p class="watermark" aria-hidden="true">02</p>
         <div class="frame">
           <div class="study-top">
-            <a class="back" href="../index.html#studies">All studies</a>
-            <p>Media · Audience intelligence</p>
+            <a class="back" href="../index.html#studies" data-i18n="study.all">All studies</a>
+            <p data-i18n="northline.meta">Media · Audience intelligence</p>
           </div>
           <div class="study-bottom">
             <p class="kicker">02 — Northline</p>
-            <h1>Audiences you can explain.</h1>
+            <h1 data-i18n="northline.h1">Audiences you can explain.</h1>
             <ul class="figures">
-              <li><strong>−27%</strong><span>Cost per qualified subscription</span></li>
-              <li><strong>4</strong><span>Named groups, in place of a lookalike</span></li>
-              <li><strong>1</strong><span>Page a seller can take to a partner</span></li>
+              <li><strong>−27%</strong><span data-i18n="northline.fig1">Cost per qualified subscription</span></li>
+              <li><strong>4</strong><span data-i18n="northline.fig2">Named groups, in place of a lookalike</span></li>
+              <li><strong>1</strong><span data-i18n="northline.fig3">Page a seller can take to a partner</span></li>
             </ul>
           </div>
         </div>
@@ -48,23 +55,23 @@
       <div class="frame essay">
         <div class="essay-grid">
           <dl class="facts">
-            <dt>Client</dt>
+            <dt data-i18n="fact.client">Client</dt>
             <dd>Northline</dd>
-            <dt>Sector</dt>
-            <dd>Media</dd>
-            <dt>Span</dt>
-            <dd>9 weeks</dd>
-            <dt>Discipline</dt>
-            <dd>Audience intelligence</dd>
+            <dt data-i18n="fact.sector">Sector</dt>
+            <dd data-i18n="sector.media">Media</dd>
+            <dt data-i18n="fact.span">Span</dt>
+            <dd data-i18n="northline.span">9 weeks</dd>
+            <dt data-i18n="fact.discipline">Discipline</dt>
+            <dd data-i18n="disc.audience">Audience intelligence</dd>
           </dl>
           <div class="prose">
-            <p class="note">A representative study, composed to show the shape of an engagement.</p>
-            <h2>The situation</h2>
-            <p>Northline’s cheapest subscribers were arriving through lookalike buys nobody could describe. The cost looked efficient. Partnerships stalled because sales could say what the click cost, and could not say who had arrived.</p>
-            <h2>The work</h2>
-            <p>We built an audience picture from what people actually read: the section, the depth, and the cadence of return. Four groups replaced the lookalike. Each group fit on a page a seller could leave with a partner — who they are, what they finish, what they decline.</p>
-            <p class="pull">An audience you cannot brief is a receipt.</p>
-            <p>The media team kept buying, but the buy had a name. When a group stopped reading, it left the plan instead of being “optimized” into a blur.</p>
+            <p class="note" data-i18n="study.note">A representative study, composed to show the shape of an engagement.</p>
+            <h2 data-i18n="study.situation">The situation</h2>
+            <p data-i18n="northline.s1">Northline’s cheapest subscribers were arriving through lookalike buys nobody could describe. The cost looked efficient. Partnerships stalled because sales could say what the click cost, and could not say who had arrived.</p>
+            <h2 data-i18n="study.work">The work</h2>
+            <p data-i18n="northline.s2">We built an audience picture from what people actually read: the section, the depth, and the cadence of return. Four groups replaced the lookalike. Each group fit on a page a seller could leave with a partner — who they are, what they finish, what they decline.</p>
+            <p class="pull" data-i18n="northline.pull">An audience you cannot brief is a receipt.</p>
+            <p data-i18n="northline.s3">The media team kept buying, but the buy had a name. When a group stopped reading, it left the plan instead of being “optimized” into a blur.</p>
           </div>
         </div>
       </div>
@@ -91,13 +98,13 @@
         <div class="essay-grid">
           <div class="spacer"></div>
           <div class="prose">
-            <h2>What remained</h2>
-            <p>Cost per qualified subscription fell 27%. The sales team stopped apologizing for the audience. They could name it, and a partner could recognize the reader in the description.</p>
-            <h2>What the team kept</h2>
+            <h2 data-i18n="study.remained">What remained</h2>
+            <p data-i18n="northline.remain">Cost per qualified subscription fell 27%. The sales team stopped apologizing for the audience. They could name it, and a partner could recognize the reader in the description.</p>
+            <h2 data-i18n="study.kept">What the team kept</h2>
             <ul class="made">
-              <li>Four audiences with a name and a reading habit</li>
-              <li>A one-page brief for each group</li>
-              <li>A weekly check for when a group goes quiet</li>
+              <li data-i18n="northline.k1">Four audiences with a name and a reading habit</li>
+              <li data-i18n="northline.k2">A one-page brief for each group</li>
+              <li data-i18n="northline.k3">A weekly check for when a group goes quiet</li>
             </ul>
           </div>
         </div>
@@ -105,9 +112,9 @@
     </article>
     <a class="onward" href="kite-and-co.html" style="--wash:#e6b84a;--on:#1a1714">
       <div class="frame">
-        <span>Next study</span>
+        <span data-i18n="study.next">Next study</span>
         <strong>Kite &amp; Co.</strong>
-        <em>Spend that follows the shelf.</em>
+        <em data-i18n="northline.next">Spend that follows the shelf.</em>
       </div>
     </a>
   </main>
@@ -115,12 +122,13 @@
     <div class="frame footer-grid">
       <div>
         <p class="footer-name">Nova Insight</p>
-        <p>A data science technology company for online marketing.</p>
+        <p data-i18n="footer.tagline">A data science technology company for online marketing.</p>
       </div>
       <div>
-        <a href="../index.html#studies">Studies</a>
-        <a href="../index.html#practice">Practice</a>
-        <a href="../index.html#contact">Contact</a>
+        <a href="../index.html#about" data-i18n="nav.about">About</a>
+        <a href="../index.html#studies" data-i18n="nav.studies">Studies</a>
+        <a href="../index.html#practice" data-i18n="nav.practice">Practice</a>
+        <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
       </div>
       <div>
         <a href="mailto:hello@novainsight.com">hello@novainsight.com</a>
@@ -128,6 +136,7 @@
       </div>
     </div>
   </footer>
+  <script src="../js/i18n.js"></script>
   <script src="../js/site.js"></script>
 </body>
 </html>

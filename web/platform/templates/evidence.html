@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}{{ t('evidence.title', brand=project.brand_name) }}{% endblock %}
+{% block body %}
+  <h1>{{ t('evidence.h1') }}</h1>
+  <p class="lede">{{ t('evidence.lede') }}</p>
+  <form method="post" action="{{ url_for('create_evidence', project_id=project.id) }}">
+    <div class="two">
+      <label>
+        <span>{{ t('field.source') }}</span>
+        <select name="kind">
+          <option value="site">{{ t('source.site') }}</option>
+          <option value="external">{{ t('source.external') }}</option>
+        </select>
+      </label>
+      <label>
+        <span>{{ t('field.record') }}</span>
+        <select name="claim_type">
+          <option value="fact">{{ t('claim.fact') }}</option>
+          <option value="hypothesis">{{ t('claim.hypothesis') }}</option>
+        </select>
+      </label>
+    </div>
+    <label><span>{{ t('field.observation') }}</span><textarea name="observation" required></textarea></label>
+    <label><span>{{ t('field.detail') }}</span><textarea name="detail"></textarea></label>
+    <button type="submit">{{ t('evidence.save') }}</button>
+  </form>
+  {% for note in notes %}
+    <article class="note">
+      <p>
+        <span class="tag">{{ t('source.site') if note.kind == 'site' else t('source.external') }}</span>
+        <span class="tag">{{ t('claim.fact') if note.claim_type == 'fact' else t('claim.hypothesis') }}</span>
+      </p>
+      <h2>{{ note.observation }}</h2>
+      {% if note.detail %}<p class="meta">{{ note.detail }}</p>{% endif %}
+    </article>
+  {% endfor %}
+{% endblock %}

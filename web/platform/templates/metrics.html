@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}{{ t('metrics.title', brand=project.brand_name) }}{% endblock %}
+{% block body %}
+  <h1>{{ t('metrics.h1') }}</h1>
+  <p class="lede">{{ t('metrics.lede') }}</p>
+  {% for channel, metrics in by_channel.items() %}
+    <section>
+      <h2 style="margin-top:32px">{{ channel_labels[channel] }}</h2>
+      {% if metrics.total == 0 %}
+        <p class="meta">{{ t('metrics.empty') }}</p>
+      {% else %}
+        <div class="metrics">
+          <article class="metric">
+            <strong>{{ metrics.natural.rate|pct }}</strong>
+            <p>{{ t('metrics.natural', num=metrics.natural.num, den=metrics.natural.den) }}</p>
+          </article>
+          <article class="metric">
+            <strong>{{ metrics.recommended.rate|pct }}</strong>
+            <p>{{ t('metrics.recommended', num=metrics.recommended.num, den=metrics.recommended.den) }}</p>
+          </article>
+          <article class="metric">
+            <strong>{{ metrics.cited.rate|pct }}</strong>
+            <p>{{ t('metrics.cited', num=metrics.cited.num, den=metrics.cited.den) }}</p>
+          </article>
+          <article class="metric">
+            <strong>{{ metrics.errors.rate|pct }}</strong>
+            <p>{{ t('metrics.errors', num=metrics.errors.num, den=metrics.errors.den) }}</p>
+          </article>
+          <article class="metric">
+            <strong>{{ metrics.negative.num }}</strong>
+            <p>{{ t('metrics.negative', num=metrics.negative.num, den=metrics.negative.den) }}</p>
+          </article>
+        </div>
+        {% if metrics.gaps %}
+          <h2 style="margin-top:28px">{{ t('metrics.gaps') }}</h2>
+          <p class="meta">{{ t('metrics.gap_intro', rate=metrics.natural.rate|pct) }}</p>
+          {% for gap in metrics.gaps %}
+            <article class="metric">
+              <strong>{{ gap.rate|pct }}</strong>
+              <p>{{ t('metrics.gap', name=gap.name, num=gap.num, den=gap.den, delta=((metrics.natural.rate or 0) - (gap.rate or 0))|pct) }}</p>
+            </article>
+          {% endfor %}
+        {% endif %}
+        {% if metrics.unstable_question_ids %}
+          <p class="meta">{{ t('metrics.unstable', n=metrics.unstable_question_ids|length) }}</p>
+        {% endif %}
+      {% endif %}
+    </section>
+  {% endfor %}
+{% endblock %}
